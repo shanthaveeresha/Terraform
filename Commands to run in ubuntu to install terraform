@@ -1,0 +1,32 @@
+ssh -i ~/Downloads/s3test.pem ubuntu@IP
+############################################
+sudo bash
+apt update -y
+apt upgrade -y
+apt install python3-pip
+sudo pip3 install -U awscli
+aws --version
+###############################################
+switch to ubuntu
+################################################
+aws configure
+A******************5 --accesskey
+U****************************************p --secret key
+
+##To install terraform
+wget https://releases.hashicorp.com/terraform/1.2.0/terraform_1.2.0_linux_amd64.zip
+sudo apt install unzip
+unzip *.zip
+./terraform --version
+sudo mv terraform /usr/bin
+terraform ---> you can see the version output directly.
+
+##clone the URL to create bucket, ec2-instance, EKS-cluster
+git init
+git clone https://github.com/shanthaveeresha/AWS-S3-Terraform.git
+
+##run terraform
+terraform init
+terraform plan
+terraform apply
+terraform destroy
