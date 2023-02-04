@@ -10,6 +10,11 @@ sudo apt-get update
 sudo apt-get install -y kubectl
 kubectl version --client
 
+##to connect to aws EKS cluster##
+aws sts get-caller-identity
+aws eks --region example_region update-kubeconfig --name cluster_name
+kubectl get pods --kubeconfig ./.kube/config
+
 
 ###### install terraform 1.2.0######
 wget https://releases.hashicorp.com/terraform/1.2.0/terraform_1.2.0_linux_amd64.zip
